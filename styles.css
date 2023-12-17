@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('img/bg4.png'); 
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #8a63bf;
+}
+
+button {
+    background-color: #8a63bf;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #6d429c;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+select {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border-color: #8a63bf;
+}
+
+select::after {
+    content: '\25BC'; 
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none; 
+}
+
+/* Estilos generales para ambas vistas */
+h1 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+a {
+    color: #8a63bf;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6d429c;
+}
+
+/* Estilos específicos para la vista de Usuario Normal */
+.container-normal {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/* Estilos específicos para la vista de Administrador */
+.container-admin {
+    background-color: #f0f0f0;
+    border: 1px solid #666;
+    background-color: #eee;
+}
+
+.error-message {
+    background-color: #ffcccc;
+    color: #990000;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #990000;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Animation for the error message */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Apply the animation to the error message */
+.error-message {
+    animation: fadeInOut 4s ease-in-out;
+}
+
+/* Animation for the container */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the container */
+.container {
+    animation: slideIn 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#rotatingImage {
+    width: 400px; /* Set your desired width */
+    height: 400px; /* Set your desired height */
+    border-radius: 100%; /* Make the image circular */
+    animation: rotate 3s infinite linear, flash 1s infinite alternate; /* Adjust the durations and animation properties as needed */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flash {
+    0% {
+        box-shadow: 0 0 100px rgba(255, 0, 0, 0.5); /* Red outline */
+    }
+    20% {
+        box-shadow: 0 0 100px rgba(255, 165, 0, 0.5); /* Orange outline */
+    }
+    40% {
+        box-shadow: 0 0 100px rgba(255, 255, 0, 0.5); /* Yellow outline */
+    }
+    60% {
+        box-shadow: 0 0 100px rgba(0, 128, 0, 0.5); /* Green outline */
+    }
+    80% {
+        box-shadow: 0 0 100px rgba(0, 0, 255, 0.5); /* Blue outline */
+    }
+    100% {
+        box-shadow: 0 0 100px rgba(128, 0, 128, 0.5); /* Purple outline */
+    }
+}
